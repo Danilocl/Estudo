@@ -8,13 +8,13 @@ public class Teste {
 
 		Scanner in = new Scanner(System.in);
 		String cpf;
-		System.out.println("Digite se cpf");
+		System.out.println("Digite se cpf:\n");
 		cpf = in.next();
 
 		if (ValidaCPF.isCPF(cpf) == true) {
 			System.out.println(ValidaCPF.imprimeCPF(cpf));
 		} else {
-			System.out.println("CPF inválido	");
+			System.out.println("CPF inválido\n	");
 		}
 	}
 }
