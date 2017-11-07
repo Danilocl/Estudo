@@ -22,7 +22,7 @@ public abstract class DaoGeneric<T> {
 		}
 		return entityManager;
 	}
-
+//
 	public T searchForID(Class<T> clazz, int id) {
 		return (T) entityManager.find(clazz, id);
 	}
