@@ -7,6 +7,8 @@ import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
 import javax.persistence.Query;
 
+import model.Login;
+
 public abstract class DaoGeneric<T> {
 
 	protected EntityManager entityManager;
@@ -15,14 +17,15 @@ public abstract class DaoGeneric<T> {
 		entityManager = getEntityManager();
 	}
 
-	private EntityManager getEntityManager() {
+	protected EntityManager getEntityManager() {
 		EntityManagerFactory factory = Persistence.createEntityManagerFactory("SistemaHotel");
 		if (entityManager == null) {
 			entityManager = factory.createEntityManager();
 		}
 		return entityManager;
 	}
-////
+
+	////
 	public T searchForID(Class<T> clazz, int id) {
 		return (T) entityManager.find(clazz, id);
 	}

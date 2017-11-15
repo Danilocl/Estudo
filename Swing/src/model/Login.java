@@ -1,26 +1,31 @@
 package model;
 
 import javax.persistence.Column;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
 
 public class Login {
 
-	@Column(name="nome")
-	private String nome;
-	@Column(name="senha")
+	@Id
+	@GeneratedValue
+	private int matricula;
+	@Column(name = "nome")
+	private String loginName;
+	@Column(name = "senha")
 	private String senha;
 
-	public Login(String nome, String senha) {
+	public Login(String loginName, String senha) {
 		super();
-		this.nome = nome;
+		this.loginName = loginName;
 		this.senha = senha;
 	}
 
-	public String getNome() {
-		return nome;
+	public String getLoginName() {
+		return loginName;
 	}
 
-	public void setNome(String nome) {
-		this.nome = nome;
+	public void setNome(String loginName) {
+		this.loginName = loginName;
 	}
 
 	public String getSenha() {
@@ -31,4 +36,11 @@ public class Login {
 		this.senha = senha;
 	}
 
+	public int getMatricula() {
+		return matricula;
+	}
+
+	public void setMatricula(int matricula) {
+		this.matricula = matricula;
+	}
 }
